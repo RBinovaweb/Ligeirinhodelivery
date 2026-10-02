@@ -2,72 +2,1126 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ligeirinho ⚡ | Delivery</title>
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}body{background:#080808;color:#fff}button,input,textarea{font:inherit}button{cursor:pointer}
-header{position:sticky;top:0;z-index:1000;background:#080808f7;border-bottom:1px solid #8d6a18;padding:14px 20px}.header{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center}.logo{font-size:28px;font-weight:900;color:#d4af37}.logo span{color:#fff}.cart-btn{background:#111;color:#fff;border:1px solid #d4af37;padding:11px 16px;border-radius:12px;font-weight:bold}
-.hero{min-height:310px;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px 20px;background:linear-gradient(#000b,#000e),url("https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1600&q=80") center/cover}.hero h1{font-size:clamp(40px,8vw,72px);color:#d4af37}.hero p{max-width:800px;color:#ddd;line-height:1.5;margin:10px auto}.hero a{display:inline-block;margin-top:18px;background:#d4af37;color:#000;padding:14px 24px;border-radius:12px;font-weight:900;text-decoration:none}
-.categories{max-width:1200px;margin:20px auto;padding:0 15px;display:flex;gap:9px;overflow:auto}.cat{white-space:nowrap;background:#121212;color:#fff;border:1px solid #444;border-radius:30px;padding:10px 16px}.cat.active{background:#d4af37;color:#000;border-color:#d4af37}
-.warning{max-width:1200px;margin:15px auto;padding:12px 15px;border:1px solid #6f5314;background:#171307;color:#ddd;border-radius:10px;font-size:13px}.container{max-width:1200px;margin:auto;padding:10px 15px 50px}.products{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px}.product{background:#111;border:1px solid #292929;border-radius:18px;overflow:hidden}.product img{width:100%;height:180px;object-fit:cover}.info{padding:14px}.pcat{color:#d4af37;font-size:12px;text-transform:uppercase}.info h3{margin:7px 0}.desc{color:#aaa;font-size:13px;min-height:36px;line-height:1.4}.price{color:#d4af37;font-size:21px;font-weight:bold;margin:12px 0}.add{width:100%;padding:12px;border:0;border-radius:10px;background:#d4af37;color:#000;font-weight:900}
-.overlay{position:fixed;inset:0;background:#000b;z-index:2000;display:none}.overlay.show{display:block}.cart{position:fixed;right:-100%;top:0;width:min(470px,100%);height:100%;background:#0d0d0d;z-index:2100;overflow:auto;transition:.3s;border-left:1px solid #d4af37}.cart.open{right:0}.cart-head{position:sticky;top:0;background:#111;padding:18px;display:flex;justify-content:space-between;z-index:3;border-bottom:1px solid #333}.cart-head h2{color:#d4af37}.close{background:#222;color:#fff;border:1px solid #555;border-radius:50%;width:38px;height:38px}.cart-body{padding:18px}.empty{text-align:center;color:#999;padding:45px 10px}.item{background:#151515;border:1px solid #292929;border-radius:13px;padding:12px;margin-bottom:12px}.itemtop{display:flex;justify-content:space-between;gap:8px}.itemprice{color:#d4af37;font-weight:bold}.qty{display:flex;gap:10px;align-items:center;margin-top:10px}.qty button{width:32px;height:32px;background:#222;color:#fff;border:1px solid #555;border-radius:8px}.obs{width:100%;margin-top:10px;background:#090909;color:#fff;border:1px solid #333;border-radius:8px;padding:9px}.remove{margin-top:8px;border:0;background:none;color:#ff6868;font-size:12px}
-.form{border-top:1px solid #333;margin-top:20px;padding-top:18px}.form h3{color:#d4af37;margin-bottom:12px}.group{margin-bottom:10px}.group label{display:block;color:#ccc;font-size:13px;margin-bottom:5px}.group input,.group textarea{width:100%;padding:11px;background:#090909;color:#fff;border:1px solid #333;border-radius:9px}.row{display:grid;grid-template-columns:1fr 1fr;gap:9px}.pix{margin-top:16px;padding:15px;border:1px solid #8d6a18;background:#15120a;border-radius:13px}.pix b{color:#d4af37}.pixkey{background:#080808;padding:9px;margin:8px 0;word-break:break-all}.copy{width:100%;padding:9px;border:1px solid #d4af37;background:none;color:#d4af37;border-radius:8px}.totals{border-top:1px solid #333;margin-top:18px;padding-top:14px}.line,.final{display:flex;justify-content:space-between;margin:7px 0}.final{color:#d4af37;font-size:23px;font-weight:bold}.send{width:100%;padding:15px;border:0;border-radius:12px;background:#25d366;color:#fff;font-weight:900;font-size:16px;margin-top:15px}.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,100px);opacity:0;background:#222;color:#fff;border:1px solid #d4af37;padding:12px 18px;border-radius:10px;z-index:5000;transition:.3s}.toast.show{opacity:1;transform:translate(-50%,0)}
-@media(max-width:600px){.products{grid-template-columns:repeat(2,1fr);gap:10px}.product img{height:130px}.info{padding:10px}.info h3{font-size:15px}.desc{font-size:11px}.price{font-size:17px}.row{grid-template-columns:1fr}.logo{font-size:23px}}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#080808;
+    color:#fff;
+}
+
+button,input,textarea,select{
+    font-family:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(8,8,8,.97);
+    border-bottom:1px solid #8d6a18;
+    padding:14px 20px;
+}
+
+.header-content{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:900;
+    color:#d4af37;
+}
+
+.logo span{
+    color:#fff;
+}
+
+.cart-button{
+    border:1px solid #d4af37;
+    background:#111;
+    color:#fff;
+    padding:11px 16px;
+    border-radius:12px;
+    font-weight:bold;
+}
+
+.cart-button:hover{
+    background:#d4af37;
+    color:#000;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:330px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:40px 20px;
+
+    background:
+        linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.9)),
+        url("https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1600&q=80")
+        center/cover;
+}
+
+.hero-content{
+    max-width:800px;
+}
+
+.hero h1{
+    font-size:clamp(38px,8vw,72px);
+    color:#d4af37;
+    margin-bottom:12px;
+}
+
+.hero p{
+    font-size:18px;
+    color:#ddd;
+    line-height:1.5;
+}
+
+.hero-button{
+    display:inline-block;
+    margin-top:22px;
+    background:linear-gradient(135deg,#d4af37,#9d7615);
+    color:#000;
+    padding:14px 24px;
+    border-radius:12px;
+    font-weight:900;
+    text-decoration:none;
+}
+
+/* ================= CATEGORIAS ================= */
+
+.categories{
+    max-width:1200px;
+    margin:25px auto;
+    padding:0 15px;
+    display:flex;
+    gap:10px;
+    overflow-x:auto;
+}
+
+.category{
+    white-space:nowrap;
+    background:#121212;
+    color:#fff;
+    border:1px solid #444;
+    border-radius:30px;
+    padding:10px 17px;
+}
+
+.category.active,
+.category:hover{
+    background:#d4af37;
+    color:#000;
+    border-color:#d4af37;
+}
+
+/* ================= AVISO ================= */
+
+.age-warning{
+    max-width:1200px;
+    margin:20px auto;
+    padding:13px 15px;
+    border:1px solid #6f5314;
+    background:#171307;
+    color:#ddd;
+    border-radius:10px;
+    font-size:13px;
+}
+
+/* ================= PRODUTOS ================= */
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:10px 15px 50px;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+    gap:18px;
+}
+
+.product{
+    background:#111;
+    border:1px solid #292929;
+    border-radius:18px;
+    overflow:hidden;
+    transition:.2s;
+}
+
+.product:hover{
+    transform:translateY(-3px);
+    border-color:#d4af37;
+}
+
+.product-image{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    display:block;
+}
+
+.product-info{
+    padding:15px;
+}
+
+.product-category{
+    color:#d4af37;
+    font-size:12px;
+    text-transform:uppercase;
+    margin-bottom:7px;
+}
+
+.product h3{
+    font-size:18px;
+    margin-bottom:8px;
+}
+
+.product-description{
+    color:#aaa;
+    font-size:13px;
+    line-height:1.4;
+    min-height:38px;
+}
+
+.price{
+    color:#d4af37;
+    font-size:21px;
+    font-weight:bold;
+    margin:13px 0;
+}
+
+.add-button{
+    width:100%;
+    border:0;
+    padding:12px;
+    border-radius:10px;
+    background:#d4af37;
+    color:#000;
+    font-weight:900;
+}
+
+.add-button:hover{
+    background:#f0ce58;
+}
+
+/* ================= OVERLAY ================= */
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.75);
+    z-index:2000;
+    display:none;
+}
+
+.overlay.show{
+    display:block;
+}
+
+/* ================= CARRINHO ================= */
+
+.cart{
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:min(470px,100%);
+    height:100%;
+    background:#0d0d0d;
+    z-index:2100;
+    transition:.3s;
+    overflow-y:auto;
+    border-left:1px solid #d4af37;
+}
+
+.cart.open{
+    right:0;
+}
+
+.cart-header{
+    position:sticky;
+    top:0;
+    z-index:5;
+    background:#111;
+    border-bottom:1px solid #333;
+    padding:18px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.cart-header h2{
+    color:#d4af37;
+}
+
+.close-cart{
+    background:#222;
+    border:1px solid #555;
+    color:#fff;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+}
+
+.cart-content{
+    padding:18px;
+}
+
+.empty{
+    text-align:center;
+    color:#999;
+    padding:50px 15px;
+}
+
+/* ================= ITEM CARRINHO ================= */
+
+.cart-item{
+    background:#151515;
+    border:1px solid #292929;
+    border-radius:13px;
+    padding:13px;
+    margin-bottom:12px;
+}
+
+.cart-item-top{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+}
+
+.cart-item-name{
+    font-weight:bold;
+}
+
+.cart-item-price{
+    color:#d4af37;
+    font-weight:bold;
+}
+
+.quantity{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top:12px;
+}
+
+.quantity button{
+    width:32px;
+    height:32px;
+    border-radius:8px;
+    border:1px solid #555;
+    background:#222;
+    color:#fff;
+}
+
+.quantity span{
+    min-width:25px;
+    text-align:center;
+}
+
+.observation{
+    width:100%;
+    margin-top:10px;
+    background:#090909;
+    border:1px solid #333;
+    color:#fff;
+    border-radius:8px;
+    padding:10px;
+    resize:vertical;
+}
+
+.remove{
+    margin-top:10px;
+    background:none;
+    border:0;
+    color:#ff6868;
+    font-size:12px;
+}
+
+/* ================= FORMULÁRIO ================= */
+
+.form-section{
+    margin-top:22px;
+    border-top:1px solid #333;
+    padding-top:20px;
+}
+
+.form-section h3{
+    color:#d4af37;
+    margin-bottom:14px;
+}
+
+.form-group{
+    margin-bottom:12px;
+}
+
+.form-group label{
+    display:block;
+    font-size:13px;
+    color:#ccc;
+    margin-bottom:5px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select{
+    width:100%;
+    background:#090909;
+    color:#fff;
+    border:1px solid #333;
+    border-radius:9px;
+    padding:12px;
+    outline:none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus{
+    border-color:#d4af37;
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+/* ================= PIX ================= */
+
+.pix-box{
+    margin-top:18px;
+    padding:16px;
+    border:1px solid #8d6a18;
+    background:#15120a;
+    border-radius:13px;
+}
+
+.pix-title{
+    color:#d4af37;
+    font-weight:bold;
+    margin-bottom:8px;
+}
+
+.pix-key{
+    background:#080808;
+    padding:10px;
+    border-radius:8px;
+    word-break:break-all;
+    margin:8px 0;
+}
+
+.copy-pix{
+    width:100%;
+    border:1px solid #d4af37;
+    background:transparent;
+    color:#d4af37;
+    padding:10px;
+    border-radius:8px;
+}
+
+.copy-pix:hover{
+    background:#d4af37;
+    color:#000;
+}
+
+/* ================= TOTAL ================= */
+
+.total-box{
+    margin-top:20px;
+    border-top:1px solid #333;
+    padding-top:15px;
+}
+
+.total-line{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:8px;
+    color:#ccc;
+}
+
+.total-final{
+    display:flex;
+    justify-content:space-between;
+    color:#d4af37;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:12px;
+}
+
+.send-order{
+    width:100%;
+    margin-top:18px;
+    padding:15px;
+    border:0;
+    border-radius:12px;
+    background:#25d366;
+    color:#fff;
+    font-size:17px;
+    font-weight:900;
+}
+
+.send-order:hover{
+    filter:brightness(1.1);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    border-top:1px solid #292929;
+    padding:30px 15px;
+    text-align:center;
+    color:#777;
+    line-height:1.7;
+}
+
+footer strong{
+    color:#d4af37;
+}
+
+/* ================= TOAST ================= */
+
+.toast{
+    position:fixed;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%) translateY(100px);
+    background:#222;
+    color:#fff;
+    border:1px solid #d4af37;
+    padding:13px 18px;
+    border-radius:10px;
+    z-index:5000;
+    transition:.3s;
+    opacity:0;
+}
+
+.toast.show{
+    opacity:1;
+    transform:translateX(-50%) translateY(0);
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+    .header-content{
+        padding:0;
+    }
+
+    .logo{
+        font-size:23px;
+    }
+
+    .hero{
+        min-height:290px;
+    }
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
+    }
+
+    .product-image{
+        height:130px;
+    }
+
+    .product-info{
+        padding:10px;
+    }
+
+    .product h3{
+        font-size:15px;
+    }
+
+    .product-description{
+        font-size:11px;
+    }
+
+    .price{
+        font-size:17px;
+    }
+
+    .form-row{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:360px){
+
+    .products{
+        grid-template-columns:1fr;
+    }
+
+}
 </style>
 </head>
+
 <body>
-<header><div class="header"><div class="logo">Ligeirinho<span>⚡</span></div><button class="cart-btn" onclick="openCart()">🛒 Carrinho <span id="cartCount">0</span></button></div></header>
-<section class="hero"><div><h1 id="storeName">Ligeirinho ⚡</h1><p id="storeDescription">Seu pedido rápido, fácil e direto.</p><a href="#produtos">FAZER PEDIDO</a></div></section>
-<div class="warning">🔞 <strong>Atenção:</strong> produtos alcoólicos são destinados exclusivamente a maiores de 18 anos. A entrega poderá exigir comprovação de idade.</div>
-<div class="categories" id="categories"></div>
-<main class="container" id="produtos"><div class="products" id="products"><p>Carregando produtos...</p></div></main>
-<div class="overlay" id="overlay" onclick="closeCart()"></div>
-<aside class="cart" id="cart"><div class="cart-head"><h2>Seu Pedido</h2><button class="close" onclick="closeCart()">✕</button></div><div class="cart-body">
-<div id="cartItems"></div>
-<div class="form"><h3>📍 Dados para entrega</h3>
-<div class="group"><label>Nome *</label><input id="customerName" placeholder="Digite seu nome"></div>
-<div class="group"><label>WhatsApp *</label><input id="customerPhone" inputmode="tel" placeholder="(27) 99999-9999"></div>
-<div class="row"><div class="group"><label>CEP *</label><input id="customerCep" maxlength="9" inputmode="numeric" placeholder="00000-000"></div><div class="group"><label>Número *</label><input id="customerNumber" placeholder="123"></div></div>
-<div class="group"><label>Rua / Avenida *</label><input id="customerStreet" placeholder="Nome da rua"></div>
-<div class="group"><label>Bairro *</label><input id="customerNeighborhood" placeholder="Seu bairro"></div>
-<div class="group"><label>Complemento</label><input id="customerComplement" placeholder="Casa, apartamento, bloco..."></div>
-<div class="group"><label>Ponto de referência</label><input id="customerReference" placeholder="Próximo a..."></div>
-<div class="group"><label>Observação geral</label><textarea id="orderObservation" rows="3" placeholder="Alguma informação para a entrega?"></textarea></div></div>
-<div class="pix"><b>💰 Pagamento via Pix</b><div>Chave Pix:</div><div class="pixkey" id="pixKey">Carregando...</div><button class="copy" onclick="copyPix()">📋 Copiar chave Pix</button><p style="font-size:12px;color:#999;margin-top:9px">Após realizar o Pix, envie o pedido pelo WhatsApp. O pagamento será conferido antes da liberação.</p></div>
-<div class="totals"><div class="line"><span>Subtotal</span><span id="subtotal">R$ 0,00</span></div><div class="line"><span>Entrega</span><span id="deliveryFee">A combinar</span></div><div class="final"><span>Total</span><span id="total">R$ 0,00</span></div></div>
-<button class="send" onclick="sendOrder()">🟢 ENVIAR PEDIDO PELO WHATSAPP</button>
-</div></aside>
-<footer style="border-top:1px solid #292929;padding:30px 15px;text-align:center;color:#777;line-height:1.7"><strong style="color:#d4af37">Ligeirinho ⚡</strong><br>Delivery rápido e fácil.<br>Pedidos e atendimento pelo WhatsApp.<br><br>© 2026 Ligeirinho</footer>
+
+<header>
+
+    <div class="header-content">
+
+        <div class="logo">
+            Ligeirinho<span>⚡</span>
+        </div>
+
+        <button class="cart-button" onclick="openCart()">
+            🛒 Carrinho
+            <span id="cartCount">0</span>
+        </button>
+
+    </div>
+
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>Ligeirinho ⚡</h1>
+
+        <p>
+            Seu pedido rápido, fácil e direto.
+            Açaí, lanches, porções, bebidas,
+            doces, frutas, combos e muito mais.
+        </p>
+
+        <a href="#produtos" class="hero-button">
+            FAZER PEDIDO
+        </a>
+
+    </div>
+
+</section>
+
+
+<div class="age-warning">
+
+    🔞 <strong>Atenção:</strong>
+    produtos alcoólicos são destinados exclusivamente
+    a maiores de 18 anos. A entrega poderá exigir
+    comprovação de idade.
+
+</div>
+
+
+<div class="categories">
+
+    <button class="category active"
+        onclick="filterProducts('Todos',this)">
+        Tudo
+    </button>
+
+    <button class="category"
+        onclick="filterProducts('Açaí',this)">
+        🍓 Açaí
+    </button>
+
+    <button class="category"
+        onclick="filterProducts('Lanches',this)">
+        🍔 Lanches
+    </button>
+
+    <button class="category"
+        onclick="filterProducts('Porções',this)">
+        🍟 Porções
+    </button>
+
+    <button class="category"
+        onclick="filterProducts('Doces',this)">
+        🍫 Doces
+    </button>
+
+    <button class="category"
+        onclick="filterProducts('Frutas',this)">
+        🍓 Frutas
+    </button>
+
+    <button class="category"
+        onclick="filterProducts('Bebidas',this)">
+        🥤 Bebidas
+    </button>
+
+    <button class="category"
+        onclick="filterProducts('Combos',this)">
+        🔥 Combos
+    </button>
+
+    <button class="category"
+        onclick="filterProducts('Whisky',this)">
+        🥃 Whisky 18+
+    </button>
+
+</div>
+
+
+<main class="container" id="produtos">
+
+    <div class="products" id="products"></div>
+
+</main>
+
+
+<div class="overlay"
+     id="overlay"
+     onclick="closeCart()">
+</div>
+
+
+<aside class="cart" id="cart">
+
+    <div class="cart-header">
+
+        <h2>Seu Pedido</h2>
+
+        <button class="close-cart"
+                onclick="closeCart()">
+            ✕
+        </button>
+
+    </div>
+
+
+    <div class="cart-content">
+
+        <div id="cartItems"></div>
+
+
+        <div class="form-section">
+
+            <h3>📍 Dados para entrega</h3>
+
+
+            <div class="form-group">
+
+                <label>Nome *</label>
+
+                <input
+                    type="text"
+                    id="customerName"
+                    placeholder="Digite seu nome"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>WhatsApp *</label>
+
+                <input
+                    type="tel"
+                    id="customerPhone"
+                    placeholder="(27) 99999-9999"
+                    inputmode="tel"
+                >
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>CEP *</label>
+
+                    <input
+                        type="text"
+                        id="customerCep"
+                        placeholder="00000-000"
+                        maxlength="9"
+                        inputmode="numeric"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Número *</label>
+
+                    <input
+                        type="text"
+                        id="customerNumber"
+                        placeholder="123"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Rua / Avenida *</label>
+
+                <input
+                    type="text"
+                    id="customerStreet"
+                    placeholder="Nome da rua"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Bairro *</label>
+
+                <input
+                    type="text"
+                    id="customerNeighborhood"
+                    placeholder="Seu bairro"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Complemento</label>
+
+                <input
+                    type="text"
+                    id="customerComplement"
+                    placeholder="Casa, apartamento, bloco..."
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Ponto de referência</label>
+
+                <input
+                    type="text"
+                    id="customerReference"
+                    placeholder="Próximo a..."
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Observação geral do pedido</label>
+
+                <textarea
+                    id="orderObservation"
+                    rows="3"
+                    placeholder="Alguma informação para a entrega?"
+                ></textarea>
+
+            </div>
+
+        </div>
+
+
+        <div class="pix-box">
+
+            <div class="pix-title">
+                💰 Pagamento via Pix
+            </div>
+
+            <div>Chave Pix:</div>
+
+            <div class="pix-key">
+                14210186759
+            </div>
+
+            <button class="copy-pix"
+                    onclick="copyPix()">
+                📋 Copiar chave Pix
+            </button>
+
+            <p style="
+                font-size:12px;
+                color:#999;
+                margin-top:10px;
+            ">
+                Após realizar o Pix, envie o pedido pelo
+                WhatsApp. O pagamento será conferido
+                antes da liberação do pedido.
+            </p>
+
+        </div>
+
+
+        <div class="total-box">
+
+            <div class="total-line">
+
+                <span>Subtotal</span>
+
+                <span id="subtotal">
+                    R$ 0,00
+                </span>
+
+            </div>
+
+
+            <div class="total-line">
+
+                <span>Entrega</span>
+
+                <span id="deliveryFee">
+                    A combinar
+                </span>
+
+            </div>
+
+
+            <div class="total-final">
+
+                <span>Total</span>
+
+                <span id="total">
+                    R$ 0,00
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <button class="send-order"
+                onclick="sendOrder()">
+
+            🟢 ENVIAR PEDIDO PELO WHATSAPP
+
+        </button>
+
+    </div>
+
+</aside>
+
+
+<footer>
+
+    <strong>Ligeirinho ⚡</strong>
+
+    <br>
+
+    Delivery rápido e fácil.
+
+    <br>
+
+    Pedidos e atendimento pelo WhatsApp.
+
+    <br><br>
+
+    © 2026 Ligeirinho — Todos os direitos reservados.
+
+</footer>
+
+
 <div class="toast" id="toast"></div>
-<script type="module">
-import {initializeApp} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
-import {getDatabase,ref,onValue,push} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
-import {firebaseConfig} from "./firebase-config.js";
-const app=initializeApp(firebaseConfig),db=getDatabase(app);
-let products=[],cart=[],settings={whatsapp:"5527995812932",pixKey:"14210186759",deliveryFee:0,storeName:"Ligeirinho ⚡",storeDescription:"Seu pedido rápido, fácil e direto."};
-const money=v=>Number(v||0).toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
-const esc=v=>String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
-onValue(ref(db,"settings"),s=>{if(s.exists())settings={...settings,...s.val()};document.getElementById("pixKey").textContent=settings.pixKey||"";document.getElementById("storeName").textContent=settings.storeName||"Ligeirinho ⚡";document.getElementById("storeDescription").textContent=settings.storeDescription||"";updateTotals()});
-onValue(ref(db,"products"),s=>{products=[];s.forEach(x=>{products.push({key:x.key,...x.val()})});products=products.filter(p=>p.active!==false);renderCategories();renderProducts(products)});
-function renderCategories(){let cats=[...new Set(products.map(p=>p.category).filter(Boolean))];document.getElementById("categories").innerHTML='<button class="cat active" onclick="filterProducts(\'Todos\',this)">Tudo</button>'+cats.map(c=>`<button class="cat" onclick="filterProducts(${JSON.stringify(c)},this)">${esc(c)}</button>`).join("")}
-window.filterProducts=(c,b)=>{document.querySelectorAll(".cat").forEach(x=>x.classList.remove("active"));b.classList.add("active");renderProducts(c==="Todos"?products:products.filter(p=>p.category===c))};
-function renderProducts(list){let el=document.getElementById("products");if(!list.length){el.innerHTML="<p>Nenhum produto disponível.</p>";return}el.innerHTML=list.map(p=>`<article class="product"><img src="${esc(p.image||"")}" alt="${esc(p.name)}" loading="lazy"><div class="info"><div class="pcat">${esc(p.category)}</div><h3>${esc(p.name)}</h3><div class="desc">${esc(p.description)}</div><div class="price">${money(p.price)}</div><button class="add" onclick="addToCart('${p.key}')">+ ADICIONAR</button></div></article>`).join("")}
-window.addToCart=id=>{let p=products.find(x=>x.key===id);if(!p)return;if(p.alcohol&&!confirm("Este produto contém bebida alcoólica. Você confirma que é maior de 18 anos?"))return;let x=cart.find(i=>i.id===id);x?x.quantity++:cart.push({id,name:p.name,price:Number(p.price)||0,quantity:1,observation:"",alcohol:!!p.alcohol});renderCart();openCart();toast("Produto adicionado!")};
-window.changeQuantity=(id,n)=>{let x=cart.find(i=>i.id===id);if(!x)return;x.quantity+=n;if(x.quantity<=0)cart=cart.filter(i=>i.id!==id);renderCart()};
-window.updateObs=(id,v)=>{let x=cart.find(i=>i.id===id);if(x)x.observation=v};
-window.removeItem=id=>{cart=cart.filter(i=>i.id!==id);renderCart()};
-function renderCart(){document.getElementById("cartCount").textContent=cart.reduce((a,x)=>a+x.quantity,0);let el=document.getElementById("cartItems");if(!cart.length){el.innerHTML='<div class="empty">🛒<br><br>Seu carrinho está vazio.</div>';updateTotals();return}el.innerHTML=cart.map(x=>`<div class="item"><div class="itemtop"><b>${esc(x.name)}</b><span class="itemprice">${money(x.price*x.quantity)}</span></div><small style="color:#999">${money(x.price)} cada</small><div class="qty"><button onclick="changeQuantity('${x.id}',-1)">−</button><span>${x.quantity}</span><button onclick="changeQuantity('${x.id}',1)">+</button></div><textarea class="obs" rows="2" placeholder="Observação deste item..." onchange="updateObs('${x.id}',this.value)">${esc(x.observation)}</textarea><button class="remove" onclick="removeItem('${x.id}')">🗑 Remover item</button></div>`).join("");updateTotals()}
-function subtotal(){return cart.reduce((a,x)=>a+x.price*x.quantity,0)}
-function updateTotals(){let s=subtotal(),fee=Number(settings.deliveryFee)||0;document.getElementById("subtotal").textContent=money(s);document.getElementById("deliveryFee").textContent=fee?money(fee):"A combinar";document.getElementById("total").textContent=money(s+fee)}
-window.openCart=()=>{document.getElementById("cart").classList.add("open");document.getElementById("overlay").classList.add("show");document.body.style.overflow="hidden"};
-window.closeCart=()=>{document.getElementById("cart").classList.remove("open");document.getElementById("overlay").classList.remove("show");document.body.style.overflow=""};
-window.copyPix=async()=>{try{await navigator.clipboard.writeText(settings.pixKey||"");toast("Chave Pix copiada!")}catch(e){toast("Não foi possível copiar.")}};
-function validate(){for(const [id,msg] of [["customerName","Digite o nome."],["customerPhone","Digite o WhatsApp."],["customerCep","Digite o CEP."],["customerStreet","Digite a rua."],["customerNumber","Digite o número."],["customerNeighborhood","Digite o bairro."]]){let v=document.getElementById(id).value.trim();if(!v){alert(msg);document.getElementById(id).focus();return false}}if(document.getElementById("customerPhone").value.replace(/\D/g,"").length<10){alert("Digite um WhatsApp válido.");return false}return true}
-window.sendOrder=async()=>{if(!cart.length)return alert("Seu carrinho está vazio.");if(!validate())return;let get=id=>document.getElementById(id).value.trim();let s=subtotal(),fee=Number(settings.deliveryFee)||0;let order={createdAt:Date.now(),customer:{name:get("customerName"),phone:get("customerPhone"),cep:get("customerCep"),street:get("customerStreet"),number:get("customerNumber"),neighborhood:get("customerNeighborhood"),complement:get("customerComplement"),reference:get("customerReference")},items:cart.map(x=>({...x})),subtotal:s,deliveryFee:fee,total:s+fee,observation:get("orderObservation"),status:"novo"};try{await push(ref(db,"orders"),order)}catch(e){console.error(e)}let msg=`⚡ *NOVO PEDIDO — LIGEIRINHO*\\n━━━━━━━━━━━━━━━━━━━━\\n\\n👤 *CLIENTE*\\nNome: ${order.customer.name}\\nWhatsApp: ${order.customer.phone}\\n\\n📍 *ENTREGA*\\nCEP: ${order.customer.cep}\\nEndereço: ${order.customer.street}, ${order.customer.number}\\nBairro: ${order.customer.neighborhood}\\n`;if(order.customer.complement)msg+=`Complemento: ${order.customer.complement}\\n`;if(order.customer.reference)msg+=`Referência: ${order.customer.reference}\\n`;msg+="\\n🛒 *ITENS*\\n━━━━━━━━━━━━━━━━━━━━\\n";order.items.forEach((x,i)=>{msg+=`${i+1}. ${x.name}\\n   Qtd: ${x.quantity}\\n   Unitário: ${money(x.price)}\\n   Subtotal: ${money(x.price*x.quantity)}\\n`;if(x.observation)msg+=`   Obs.: ${x.observation}\\n`;msg+="\\n"});msg+=`💰 *TOTAL: ${money(order.total)}*\\n💳 Pix: ${settings.pixKey}\\n`;if(order.observation)msg+=`\\n📝 Observação: ${order.observation}\\n`;msg+="\\n⚡ Pedido enviado pelo Ligeirinho.";window.open(`https://wa.me/${String(settings.whatsapp).replace(/\\D/g,"")}?text=${encodeURIComponent(msg)}`,"_blank")};
-function toast(m){let t=document.getElementById("toast");t.textContent=m;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2500)}
-["customerName","customerPhone","customerCep","customerStreet","customerNumber","customerNeighborhood","customerComplement","customerReference"].forEach(id=>{let e=document.getElementById(id),s=localStorage.getItem("ligeirinho_"+id);if(s)e.value=s;e.addEventListener("input",()=>localStorage.setItem("ligeirinho_"+id,e.value))});
-document.getElementById("customerCep").addEventListener("input",e=>{let v=e.target.value.replace(/\D/g,"").slice(0,8);if(v.length>5)v=v.slice(0,5)+"-"+v.slice(5);e.target.value=v});
-document.getElementById("customerPhone").addEventListener("input",e=>{let v=e.target.value.replace(/\D/g,"").slice(0,11);if(v.length>10)v=v.replace(/^(\d{2})(\d{5})(\d{0,4})$/,"($1) $2-$3");else if(v.length>=6)v=v.replace(/^(\d{2})(\d{4})(\d{0,4})$/,"($1) $2-$3");else if(v.length>=2)v=v.replace(/^(\d{2})(\d*)$/,"($1) $2");e.target.value=v});
-</script>
-</body>
-</html>
+
+
+<script>
+
+/* =========================================================
+   CONFIGURAÇÃO DO LIGEIRINHO
+========================================================= */
+
+
+/*
+   SEU WHATSAPP
+
+   55 = Brasil
+   27 = Espírito Santo
+   995812932 = seu número
+
+   NÃO ALTERE PARA:
+   +55
+   (27)
+   espaços
+   hífens
+
+   CORRETO:
+   5527995812932
+*/
+
+const WHATSAPP = "5527995812932";
+
+
+/*
+   SUA CHAVE PIX
+*/
+
+const PIX_KEY = "14210186759";
+
+
+/*
+   TAXA DE ENTREGA
+
+   0 = A COMBINAR
+
+   Para colocar uma taxa fixa,
+   troque 0 por exemplo para:
+
+   const DELIVERY_FEE = 5;
+
+*/
+
+const DELIVERY_FEE = 0;
+
+
+/* =========================================================
+   PRODUTOS
+========================================================= */
+
+const products = [
+
+    {
+        id:1,
+        name:"Açaí 300ml",
+        category:"Açaí",
+        price:15,
+        image:"https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=700&q=80",
+        description:"Açaí cremoso e gelado."
+    },
+
+    {
+        id:2,
+        name:"Açaí 500ml",
+        category:"Açaí",
+        price:20,
+        image:"https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=700&q=80",
+        description:"Açaí 500ml para matar a vontade."
+    },
+
+    {
+        id:3,
+        name:"Açaí 700ml",
+        category:"Açaí",
+        price:25,
+        image:"https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=700&q=80",
+        description:"Açaí grande e bem servido."
+    },
+
+    {
+        id:4,
+        name:"Açaí Morango",
+        category:"Açaí",
+        price:22,
+        image:"https://images.unsplash.com/photo-1577805947697-89e18249d767?auto=format&fit=crop&w=700&q=80",
+        description:"Açaí com morango."
+    },
+
+    {
+        id:5,
+        name:"Açaí Banana",
+        category:"Açaí",
+        price:22,
+        image:"https://images.unsplash.com/photo-1577805947697-89e18249d767?auto=format&fit=crop&w=700&q=80",
+        description:"Açaí com banana."
+    },
+
+    {
+        id:6,
+        name:"Açaí Ninho",
+        category:"Açaí",
+        price:23,
+        image:"https://images.unsplash.com/photo-1577805947697-89e18249d767?auto=format&fit=crop&w=700&q=80",
+        description:"Açaí com leite Ninho."
+    },
+
+    {
+        id:7,
+        name:"Açaí Nutella",
+        category:"Açaí",
+        price:25,
+        image:"https://images.unsplash.com/photo-1577805947697-89e18249d767?auto=format&fit=crop&w=700&q=80",
+        description:"Açaí com Nutella."
+    },
+
+    {
+        id:8,
+        name:"Açaí Especial",
+        category:"Açaí",
+        price:28,
+        image:"https://images.unsplash.com/photo-1577805947697-89e18249d767?auto=format&fit=crop&w=700&q=80",
+        description:"Açaí especial com complementos."
+    },
+
+
+    /* LANCHES */
+
+    {
+        id:20,
+        name:"X-Burger",
+        category:"Lanches",
+        price:18,
+        image:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=80",
+        description:"Hambúrguer, queijo e molho especial."
+    },
+
+    {
+        id:21,
+        name:"X-Salada",
+        category:"Lanches",
+        price:20,
+        image:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=80",
+        description:"Hambúrguer, queijo, salada e molho."
+    },
+
+    {
+        id:22,
+        name:"X-Bacon",
+        category:"Lanches",
+        price:23,
+        image:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=80",
+        description:"Hambúrguer, queijo e bacon."
+    },
+
+    {
+        id:23,
+        name:"X-Tudo",
+        category:"Lanches",
+        price:28,
+        image:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=80",
+        description:"Lanche completo."
+    },
+
+    {
+        id:24,
+        name:"X-Frango",
+        category:"Lanches",
+        price:22,
+        image:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=80",
+        description:"Frango, queijo e molho."
+    },
+
+    {
+        id:25,
+   
