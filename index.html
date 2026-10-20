@@ -26,8 +26,6 @@ button{
     cursor:pointer;
 }
 
-/* ================= HEADER ================= */
-
 header{
     position:sticky;
     top:0;
@@ -70,8 +68,6 @@ header{
     color:#000;
 }
 
-/* ================= HERO ================= */
-
 .hero{
     min-height:330px;
     display:flex;
@@ -79,7 +75,6 @@ header{
     justify-content:center;
     text-align:center;
     padding:40px 20px;
-
     background:
         linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.9)),
         url("https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1600&q=80")
@@ -113,8 +108,6 @@ header{
     text-decoration:none;
 }
 
-/* ================= CATEGORIAS ================= */
-
 .categories{
     max-width:1200px;
     margin:25px auto;
@@ -140,8 +133,6 @@ header{
     border-color:#d4af37;
 }
 
-/* ================= AVISO ================= */
-
 .age-warning{
     max-width:1200px;
     margin:20px auto;
@@ -152,8 +143,6 @@ header{
     border-radius:10px;
     font-size:13px;
 }
-
-/* ================= PRODUTOS ================= */
 
 .container{
     max-width:1200px;
@@ -231,8 +220,6 @@ header{
     background:#f0ce58;
 }
 
-/* ================= OVERLAY ================= */
-
 .overlay{
     position:fixed;
     inset:0;
@@ -244,8 +231,6 @@ header{
 .overlay.show{
     display:block;
 }
-
-/* ================= CARRINHO ================= */
 
 .cart{
     position:fixed;
@@ -298,8 +283,6 @@ header{
     color:#999;
     padding:50px 15px;
 }
-
-/* ================= ITEM CARRINHO ================= */
 
 .cart-item{
     background:#151515;
@@ -364,8 +347,6 @@ header{
     font-size:12px;
 }
 
-/* ================= FORMULÁRIO ================= */
-
 .form-section{
     margin-top:22px;
     border-top:1px solid #333;
@@ -412,8 +393,6 @@ header{
     gap:10px;
 }
 
-/* ================= PIX ================= */
-
 .pix-box{
     margin-top:18px;
     padding:16px;
@@ -449,8 +428,6 @@ header{
     background:#d4af37;
     color:#000;
 }
-
-/* ================= TOTAL ================= */
 
 .total-box{
     margin-top:20px;
@@ -490,8 +467,6 @@ header{
     filter:brightness(1.1);
 }
 
-/* ================= FOOTER ================= */
-
 footer{
     border-top:1px solid #292929;
     padding:30px 15px;
@@ -503,8 +478,6 @@ footer{
 footer strong{
     color:#d4af37;
 }
-
-/* ================= TOAST ================= */
 
 .toast{
     position:fixed;
@@ -526,602 +499,330 @@ footer strong{
     transform:translateX(-50%) translateY(0);
 }
 
-/* ================= MOBILE ================= */
-
 @media(max-width:600px){
-
-    .header-content{
-        padding:0;
-    }
-
-    .logo{
-        font-size:23px;
-    }
-
-    .hero{
-        min-height:290px;
-    }
-
-    .products{
-        grid-template-columns:repeat(2,1fr);
-        gap:10px;
-    }
-
-    .product-image{
-        height:130px;
-    }
-
-    .product-info{
-        padding:10px;
-    }
-
-    .product h3{
-        font-size:15px;
-    }
-
-    .product-description{
-        font-size:11px;
-    }
-
-    .price{
-        font-size:17px;
-    }
-
-    .form-row{
-        grid-template-columns:1fr;
-    }
+    .header-content{padding:0;}
+    .logo{font-size:23px;}
+    .hero{min-height:290px;}
+    .products{grid-template-columns:repeat(2,1fr);gap:10px;}
+    .product-image{height:130px;}
+    .product-info{padding:10px;}
+    .product h3{font-size:15px;}
+    .product-description{font-size:11px;}
+    .price{font-size:17px;}
+    .form-row{grid-template-columns:1fr;}
 }
-
 @media(max-width:360px){
-
-    .products{
-        grid-template-columns:1fr;
-    }
-
+    .products{grid-template-columns:1fr;}
 }
 </style>
 </head>
 
 <body>
-
 <header>
-
     <div class="header-content">
-
-        <div class="logo">
-            Ligeirinho<span>⚡</span>
-        </div>
-
+        <div class="logo">Ligeirinho<span>⚡</span></div>
         <button class="cart-button" onclick="openCart()">
-            🛒 Carrinho
-            <span id="cartCount">0</span>
+            🛒 Carrinho <span id="cartCount">0</span>
         </button>
-
     </div>
-
 </header>
 
-
 <section class="hero">
-
     <div class="hero-content">
-
         <h1>Ligeirinho ⚡</h1>
-
-        <p>
-            Seu pedido rápido, fácil e direto.
-            Açaí, lanches, porções, bebidas,
-            doces, frutas, combos e muito mais.
-        </p>
-
-        <a href="#produtos" class="hero-button">
-            FAZER PEDIDO
-        </a>
-
+        <p>Seu pedido rápido, fácil e direto. Açaí, lanches, porções, bebidas, doces, frutas, combos e muito mais.</p>
+        <a href="#produtos" class="hero-button">FAZER PEDIDO</a>
     </div>
-
 </section>
 
-
 <div class="age-warning">
-
-    🔞 <strong>Atenção:</strong>
-    produtos alcoólicos são destinados exclusivamente
-    a maiores de 18 anos. A entrega poderá exigir
-    comprovação de idade.
-
+    🔞 <strong>Atenção:</strong> produtos alcoólicos são destinados exclusivamente a maiores de 18 anos. A entrega poderá exigir comprovação de idade.
 </div>
-
 
 <div class="categories">
-
-    <button class="category active"
-        onclick="filterProducts('Todos',this)">
-        Tudo
-    </button>
-
-    <button class="category"
-        onclick="filterProducts('Açaí',this)">
-        🍓 Açaí
-    </button>
-
-    <button class="category"
-        onclick="filterProducts('Lanches',this)">
-        🍔 Lanches
-    </button>
-
-    <button class="category"
-        onclick="filterProducts('Porções',this)">
-        🍟 Porções
-    </button>
-
-    <button class="category"
-        onclick="filterProducts('Doces',this)">
-        🍫 Doces
-    </button>
-
-    <button class="category"
-        onclick="filterProducts('Frutas',this)">
-        🍓 Frutas
-    </button>
-
-    <button class="category"
-        onclick="filterProducts('Bebidas',this)">
-        🥤 Bebidas
-    </button>
-
-    <button class="category"
-        onclick="filterProducts('Combos',this)">
-        🔥 Combos
-    </button>
-
-    <button class="category"
-        onclick="filterProducts('Whisky',this)">
-        🥃 Whisky 18+
-    </button>
-
+    <button class="category active" onclick="filterProducts('Todos',this)">Tudo</button>
+    <button class="category" onclick="filterProducts('Açaí',this)">🍓 Açaí</button>
+    <button class="category" onclick="filterProducts('Lanches',this)">🍔 Lanches</button>
+    <button class="category" onclick="filterProducts('Porções',this)">🍟 Porções</button>
+    <button class="category" onclick="filterProducts('Doces',this)">🍫 Doces</button>
+    <button class="category" onclick="filterProducts('Frutas',this)">🍓 Frutas</button>
+    <button class="category" onclick="filterProducts('Bebidas',this)">🥤 Bebidas</button>
+    <button class="category" onclick="filterProducts('Combos',this)">🔥 Combos</button>
+    <button class="category" onclick="filterProducts('Whisky',this)">🥃 Whisky 18+</button>
 </div>
-
 
 <main class="container" id="produtos">
-
-    <div class="products" id="products"></div>
-
+    <div class="products" id="products">Carregando produtos…</div>
 </main>
 
-
-<div class="overlay"
-     id="overlay"
-     onclick="closeCart()">
-</div>
-
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
 
 <aside class="cart" id="cart">
-
     <div class="cart-header">
-
         <h2>Seu Pedido</h2>
-
-        <button class="close-cart"
-                onclick="closeCart()">
-            ✕
-        </button>
-
+        <button class="close-cart" onclick="closeCart()">✕</button>
     </div>
-
-
     <div class="cart-content">
-
         <div id="cartItems"></div>
-
-
         <div class="form-section">
-
             <h3>📍 Dados para entrega</h3>
-
-
             <div class="form-group">
-
                 <label>Nome *</label>
-
-                <input
-                    type="text"
-                    id="customerName"
-                    placeholder="Digite seu nome"
-                >
-
+                <input type="text" id="customerName" placeholder="Digite seu nome">
             </div>
-
-
             <div class="form-group">
-
                 <label>WhatsApp *</label>
-
-                <input
-                    type="tel"
-                    id="customerPhone"
-                    placeholder="(27) 99999-9999"
-                    inputmode="tel"
-                >
-
+                <input type="tel" id="customerPhone" placeholder="(27) 99999-9999" inputmode="tel">
             </div>
-
-
             <div class="form-row">
-
                 <div class="form-group">
-
                     <label>CEP *</label>
-
-                    <input
-                        type="text"
-                        id="customerCep"
-                        placeholder="00000-000"
-                        maxlength="9"
-                        inputmode="numeric"
-                    >
-
+                    <input type="text" id="customerCep" placeholder="00000-000" maxlength="9" inputmode="numeric">
                 </div>
-
-
                 <div class="form-group">
-
                     <label>Número *</label>
-
-                    <input
-                        type="text"
-                        id="customerNumber"
-                        placeholder="123"
-                    >
-
+                    <input type="text" id="customerNumber" placeholder="123">
                 </div>
-
             </div>
-
-
             <div class="form-group">
-
                 <label>Rua / Avenida *</label>
-
-                <input
-                    type="text"
-                    id="customerStreet"
-                    placeholder="Nome da rua"
-                >
-
+                <input type="text" id="customerStreet" placeholder="Nome da rua">
             </div>
-
-
             <div class="form-group">
-
                 <label>Bairro *</label>
-
-                <input
-                    type="text"
-                    id="customerNeighborhood"
-                    placeholder="Seu bairro"
-                >
-
+                <input type="text" id="customerNeighborhood" placeholder="Seu bairro">
             </div>
-
-
             <div class="form-group">
-
                 <label>Complemento</label>
-
-                <input
-                    type="text"
-                    id="customerComplement"
-                    placeholder="Casa, apartamento, bloco..."
-                >
-
+                <input type="text" id="customerComplement" placeholder="Casa, apartamento, bloco…">
             </div>
-
-
             <div class="form-group">
-
                 <label>Ponto de referência</label>
-
-                <input
-                    type="text"
-                    id="customerReference"
-                    placeholder="Próximo a..."
-                >
-
+                <input type="text" id="customerReference" placeholder="Próximo a…">
             </div>
-
-
             <div class="form-group">
-
                 <label>Observação geral do pedido</label>
-
-                <textarea
-                    id="orderObservation"
-                    rows="3"
-                    placeholder="Alguma informação para a entrega?"
-                ></textarea>
-
+                <textarea id="orderObservation" rows="3" placeholder="Alguma informação para a entrega?"></textarea>
             </div>
-
         </div>
-
 
         <div class="pix-box">
-
-            <div class="pix-title">
-                💰 Pagamento via Pix
-            </div>
-
+            <div class="pix-title">💰 Pagamento via Pix</div>
             <div>Chave Pix:</div>
-
-            <div class="pix-key">
-                14210186759
-            </div>
-
-            <button class="copy-pix"
-                    onclick="copyPix()">
-                📋 Copiar chave Pix
-            </button>
-
-            <p style="
-                font-size:12px;
-                color:#999;
-                margin-top:10px;
-            ">
-                Após realizar o Pix, envie o pedido pelo
-                WhatsApp. O pagamento será conferido
-                antes da liberação do pedido.
+            <div class="pix-key" id="pixKeyBox">—</div>
+            <button class="copy-pix" onclick="copyPix()">📋 Copiar chave Pix</button>
+            <p style="font-size:12px;color:#999;margin-top:10px;">
+                Após realizar o Pix, envie o pedido pelo WhatsApp. O pagamento será conferido antes da liberação do pedido.
             </p>
-
         </div>
-
 
         <div class="total-box">
-
-            <div class="total-line">
-
-                <span>Subtotal</span>
-
-                <span id="subtotal">
-                    R$ 0,00
-                </span>
-
-            </div>
-
-
-            <div class="total-line">
-
-                <span>Entrega</span>
-
-                <span id="deliveryFee">
-                    A combinar
-                </span>
-
-            </div>
-
-
-            <div class="total-final">
-
-                <span>Total</span>
-
-                <span id="total">
-                    R$ 0,00
-                </span>
-
-            </div>
-
+            <div class="total-line"><span>Subtotal</span><span id="subtotal">R$ 0,00</span></div>
+            <div class="total-line"><span>Entrega</span><span id="deliveryFee">A combinar</span></div>
+            <div class="total-final"><span>Total</span><span id="total">R$ 0,00</span></div>
         </div>
 
-
-        <button class="send-order"
-                onclick="sendOrder()">
-
-            🟢 ENVIAR PEDIDO PELO WHATSAPP
-
-        </button>
-
+        <button class="send-order" onclick="sendOrder()">🟢 ENVIAR PEDIDO PELO WHATSAPP</button>
     </div>
-
 </aside>
 
-
 <footer>
-
-    <strong>Ligeirinho ⚡</strong>
-
-    <br>
-
-    Delivery rápido e fácil.
-
-    <br>
-
-    Pedidos e atendimento pelo WhatsApp.
-
-    <br><br>
-
+    <strong>Ligeirinho ⚡</strong><br>
+    Delivery rápido e fácil.<br>
+    Pedidos e atendimento pelo WhatsApp.<br><br>
     © 2026 Ligeirinho — Todos os direitos reservados.
-
 </footer>
-
 
 <div class="toast" id="toast"></div>
 
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+import { firebaseConfig } from "./firebase-config.js";
 
-<script>
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
 
-/* =========================================================
-   CONFIGURAÇÃO DO LIGEIRINHO
-========================================================= */
+let WHATSAPP = "5527995812932";
+let PIX_KEY = "14210186759";
+let DELIVERY_FEE = 0;
 
+let allProducts = [];
+let filteredProducts = [];
+let currentFilter = "Todos";
+let cart = [];
 
-/*
-   SEU WHATSAPP
+function escapeHtml(str){
+    if(!str) return "";
+    return String(str)
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+}
 
-   55 = Brasil
-   27 = Espírito Santo
-   995812932 = seu número
+// Carregar configurações
+onValue(ref(db,"settings"), snapshot=>{
+    const s = snapshot.val() || {};
+    if(s.whatsapp) WHATSAPP = s.whatsapp;
+    if(s.pixKey) PIX_KEY = s.pixKey;
+    if(typeof s.deliveryFee !== "undefined") DELIVERY_FEE = Number(s.deliveryFee);
+    document.getElementById("pixKeyBox").textContent = PIX_KEY;
+    updateTotals();
+});
 
-   NÃO ALTERE PARA:
-   +55
-   (27)
-   espaços
-   hífens
+// Carregar produtos
+onValue(ref(db,"products"), snapshot=>{
+    const rawData = snapshot.val() || {};
+    allProducts = Object.entries(rawData).map(([key, prod])=>({
+        id: key,
+        name: prod.name || "Sem nome",
+        category: prod.category || "Outros",
+        price: Number(prod.price || 0),
+        image: prod.image || "",
+        description: prod.description || "",
+        active: prod.active !== false
+    })).filter(p=>p.active);
+    applyFilter();
+});
 
-   CORRETO:
-   5527995812932
-*/
+function applyFilter(){
+    if(currentFilter === "Todos"){
+        filteredProducts = [...allProducts];
+    }else{
+        filteredProducts = allProducts.filter(p=>p.category === currentFilter);
+    }
+    renderProducts();
+}
 
-const WHATSAPP = "5527995812932";
+function renderProducts(){
+    const wrap = document.getElementById("products");
+    if(filteredProducts.length === 0){
+        wrap.innerHTML = "<p style='color:#aaa'>Nenhum produto disponível nesta categoria.</p>";
+        return;
+    }
+    let html = "";
+    filteredProducts.forEach(p=>{
+        html += `<div class="product">`;
+        if(p.image){
+            html += `<img class="product-image" src="${escapeHtml(p.image)}" alt="${escapeHtml(p.name)}">`;
+        }
+        html += `
+            <div class="product-info">
+                <div class="product-category">${escapeHtml(p.category)}</div>
+                <h3>${escapeHtml(p.name)}</h3>
+                <p class="product-description">${escapeHtml(p.description)}</p>
+                <div class="price">R$ ${Number(p.price).toFixed(2).replace(".",",")}</div>
+                <button class="add-button" onclick="addToCart('${escapeHtml(p.id)}')">+ Adicionar</button>
+            </div>
+        </div>`;
+    });
+    wrap.innerHTML = html;
+}
 
+window.filterProducts = function(cat, btn){
+    currentFilter = cat;
+    document.querySelectorAll(".category").forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+    applyFilter();
+};
 
-/*
-   SUA CHAVE PIX
-*/
+window.addToCart = function(prodId){
+    const p = allProducts.find(x=>x.id === prodId);
+    if(!p) return;
+    const existing = cart.find(x=>x.id === prodId);
+    if(existing){
+        existing.qty += 1;
+    }else{
+        cart.push({ id:p.id, name:p.name, price:p.price, qty:1, note:"" });
+    }
+    updateCartUI();
+    showToast("Adicionado ao carrinho!");
+};
 
-const PIX_KEY = "14210186759";
+function updateCartUI(){
+    const countEl = document.getElementById("cartCount");
+    const itemsEl = document.getElementById("cartItems");
+    countEl.textContent = cart.reduce((sum,i)=>sum + i.qty, 0);
 
+    if(cart.length === 0){
+        itemsEl.innerHTML = `<div class="empty">O carrinho está vazio</div>`;
+    }else{
+        let html = "";
+        cart.forEach((item, idx)=>{
+            html += `
+                <div class="cart-item">
+                    <div class="cart-item-top">
+                        <div class="cart-item-name">${escapeHtml(item.name)}</div>
+                        <div class="cart-item-price">R$ ${(item.price * item.qty).toFixed(2).replace(".",",")}</div>
+                    </div>
+                    <div class="quantity">
+                        <button onclick="changeQty(${idx}, -1)">‑</button>
+                        <span>${item.qty}</span>
+                        <button onclick="changeQty(${idx}, 1)">+</button>
+                    </div>
+                    <textarea class="observation" placeholder="Observação deste item…" onchange="cart[${idx}].note=this.value">${escapeHtml(item.note)}</textarea>
+                    <button class="remove" onclick="removeItem(${idx})">Remover</button>
+                </div>
+            `;
+        });
+        itemsEl.innerHTML = html;
+    }
+    updateTotals();
+}
 
-/*
-   TAXA DE ENTREGA
+window.changeQty = function(idx, delta){
+    cart[idx].qty += delta;
+    if(cart[idx].qty <= 0) cart.splice(idx,1);
+    updateCartUI();
+};
 
-   0 = A COMBINAR
+window.removeItem = function(idx){
+    cart.splice(idx,1);
+    updateCartUI();
+};
 
-   Para colocar uma taxa fixa,
-   troque 0 por exemplo para:
+function updateTotals(){
+    const subtotal = cart.reduce((sum,i)=>sum + i.price * i.qty, 0);
+    const total = subtotal + DELIVERY_FEE;
+    document.getElementById("subtotal").textContent = "R$ " + subtotal.toFixed(2).replace(".",",");
+    document.getElementById("deliveryFee").textContent = DELIVERY_FEE > 0 ? "R$ " + DELIVERY_FEE.toFixed(2).replace(".",",") : "A combinar";
+    document.getElementById("total").textContent = "R$ " + total.toFixed(2).replace(".",",");
+}
 
-   const DELIVERY_FEE = 5;
+window.openCart = function(){
+    document.getElementById("overlay").classList.add("show");
+    document.getElementById("cart").classList.add("open");
+};
 
-*/
+window.closeCart = function(){
+    document.getElementById("overlay").classList.remove("show");
+    document.getElementById("cart").classList.remove("open");
+};
 
-const DELIVERY_FEE = 0;
+window.copyPix = async function(){
+    try{
+        await navigator.clipboard.writeText(PIX_KEY);
+        showToast("Chave Pix copiada!");
+    }catch(e){
+        showToast("Não foi possível copiar automaticamente. Copie manualmente.");
+    }
+};
 
+function showToast(msg){
+    const t = document.getElementById("toast");
+    t.textContent = msg;
+    t.classList.add("show");
+    setTimeout(()=>t.classList.remove("show"),2200);
+}
 
-/* =========================================================
-   PRODUTOS
-========================================================= */
-
-const products = [
-
-    {
-        id:1,
-        name:"Açaí 300ml",
-        category:"Açaí",
-        price:15,
-        image:"https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=700&q=80",
-        description:"Açaí cremoso e gelado."
-    },
-
-    {
-        id:2,
-        name:"Açaí 500ml",
-        category:"Açaí",
-        price:20,
-        image:"https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=700&q=80",
-        description:"Açaí 500ml para matar a vontade."
-    },
-
-    {
-        id:3,
-        name:"Açaí 700ml",
-        category:"Açaí",
-        price:25,
-        image:"https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=700&q=80",
-        description:"Açaí grande e bem servido."
-    },
-
-    {
-        id:4,
-        name:"Açaí Morango",
-        category:"Açaí",
-        price:22,
-        image:"https://images.unsplash.com/photo-1577805947697-89e18249d767?auto=format&fit=crop&w=700&q=80",
-        description:"Açaí com morango."
-    },
-
-    {
-        id:5,
-        name:"Açaí Banana",
-        category:"Açaí",
-        price:22,
-        image:"https://images.unsplash.com/photo-1577805947697-89e18249d767?auto=format&fit=crop&w=700&q=80",
-        description:"Açaí com banana."
-    },
-
-    {
-        id:6,
-        name:"Açaí Ninho",
-        category:"Açaí",
-        price:23,
-        image:"https://images.unsplash.com/photo-1577805947697-89e18249d767?auto=format&fit=crop&w=700&q=80",
-        description:"Açaí com leite Ninho."
-    },
-
-    {
-        id:7,
-        name:"Açaí Nutella",
-        category:"Açaí",
-        price:25,
-        image:"https://images.unsplash.com/photo-1577805947697-89e18249d767?auto=format&fit=crop&w=700&q=80",
-        description:"Açaí com Nutella."
-    },
-
-    {
-        id:8,
-        name:"Açaí Especial",
-        category:"Açaí",
-        price:28,
-        image:"https://images.unsplash.com/photo-1577805947697-89e18249d767?auto=format&fit=crop&w=700&q=80",
-        description:"Açaí especial com complementos."
-    },
-
-
-    /* LANCHES */
-
-    {
-        id:20,
-        name:"X-Burger",
-        category:"Lanches",
-        price:18,
-        image:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=80",
-        description:"Hambúrguer, queijo e molho especial."
-    },
-
-    {
-        id:21,
-        name:"X-Salada",
-        category:"Lanches",
-        price:20,
-        image:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=80",
-        description:"Hambúrguer, queijo, salada e molho."
-    },
-
-    {
-        id:22,
-        name:"X-Bacon",
-        category:"Lanches",
-        price:23,
-        image:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=80",
-        description:"Hambúrguer, queijo e bacon."
-    },
-
-    {
-        id:23,
-        name:"X-Tudo",
-        category:"Lanches",
-        price:28,
-        image:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=80",
-        description:"Lanche completo."
-    },
-
-    {
-        id:24,
-        name:"X-Frango",
-        category:"Lanches",
-        price:22,
-        image:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=80",
-        description:"Frango, queijo e molho."
-    },
-
-    {
-        id:25,
-   
+window.sendOrder = function(){
+    const name = document.getElementById("customerName").value.trim();
+    const phone = document.getElementById("customerPhone").value.trim();
+    const cep = document.getElementById("customerCep").value.trim();
+    const num = document.getElementById("customerNumber").value.trim();
+    const rua = document.getElementById("customerStreet").value.trim();
+    const bairro = document.getElementById("customerNeighborhood").value.trim();
+    const comp = document.getElementById("customerComplement").value.trim();
+    const ref = document.getElementById("customerRefere
